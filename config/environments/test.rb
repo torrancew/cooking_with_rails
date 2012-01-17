@@ -33,13 +33,13 @@ MongoStalker::Application.configure do
   config.action_mailer.smtp_settings = {
     :address => Settings.mailer_config[:host],
     :port    => Settings.mailer_config[:port],
-    :domain  => Settings.mailer_config[:domain]
+    :domain  => Settings.mailer_config[:domain],
 
-    :enable_starttls_auto => Settings.mailer_config['tls']
+    :enable_starttls_auto => Settings.mailer_config['tls'],
 
-    :authentication => Settings.mailer_config[:auth]
-    :user_name      => Settings.mailer_config[:user] if Settings.mailer_config[:user]
-    :password       => Settings.mailer_config[:pass] if Settings.mailer_config[:pass]
+    :authentication => Settings.mailer_config[:auth],
+    :user_name      => Settings.mailer_config[:user] ? Settings.mailer_config[:user] : nil,
+    :password       => Settings.mailer_config[:pass] ? Settings.mailer_config[:pass] : nil,
   }
 
   # Use SQL instead of Active Record's schema dumper when creating the test database.
