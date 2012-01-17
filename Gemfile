@@ -46,6 +46,9 @@ group :assets do
 end
 
 group :test do
+  # Use Spork for clean tests
+  gem 'spork', '~> 0.9.0.rc'
+
   # Use RSpec & Cucumber
   gem 'rspec-rails',    '~> 2.8.1'
   gem 'cucumber-rails', '~> 1.2.1'
