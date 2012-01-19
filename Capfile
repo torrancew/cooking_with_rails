@@ -1,4 +1,8 @@
-load 'deploy' if respond_to?(:namespace)
+# Capistrano v2 differentiator
+load 'deploy' if respond_to?( :namespace )
+
+# Load default tasks
+load 'config/deploy'
 
 # Use the Rails asset pipeline
 load 'deploy/assets'
@@ -9,9 +13,6 @@ load 'deploy/assets'
   'vendor/plugins/*/recipes/*.rb',
   'config/recipes/*.rb',
 ].each do |recipe_path|
-  Dir[recipe_path].each { |plugin| load(plugin) }
+  Dir[recipe_path].each { |plugin| load( plugin ) }
 end
-
-# Load default tasks
-load 'config/deploy'
 

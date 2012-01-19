@@ -1,5 +1,8 @@
-require 'bundler/capistrano'
 require File.expand_path('../environment', __FILE__)
+
+# Load Bundler's Capistrano support
+set :bundle_roles, [ :app ]
+require 'bundler/capistrano'
 
 # Application Name
 set :application, 'MongoStalker'
@@ -19,7 +22,7 @@ set :deploy_via,            :remote_cache
 set :git_enable_submodules, 1
 
 # Servers
-server 'uruk.warrentorrance.com', :app, :web, :db
+server Settings.deploy_config['server'], :app
 
 # Hooks
 after 'deploy:update', 'deploy:cleanup'
