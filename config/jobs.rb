@@ -1,6 +1,7 @@
 require 'stalker'
 
 module Jobs
-  Dir["#{File.expand_path('../jobs', __FILE__)}/*.rb"].each { |job| require job }
+  jobs_path = File.expand_path( '../jobs', __FILE__ )
+  Dir["#{jobs_path}/*.rb"].each { |job| require job }
 end
 
