@@ -1,8 +1,9 @@
 rails_env = ENV['RAILS_ENV'] || 'development'
 
 # Enable and set these to run the worker as a different user/group
-#user  = 'diaspora'
-#group = 'diaspora'
+#unicorn_user  = ''
+#unicorn_group = ''
+#user unicorn_user, unicorn_group
 
 worker_processes = rails_env == 'production' ? 3 : 1
 
