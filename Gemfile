@@ -7,7 +7,7 @@ gem 'bundler', '>= 1.0.0'
 # DB/Queueing Connectors
 gem 'stalker',  '~> 0.9.0'
 gem 'mongoid',  '~> 2.4.1'
-gem 'bson_ext', '~> 1.5.2'
+gem 'bson_ext', '~> 1.5.2', :require => 'bson'
 
 # Send mails
 gem 'actionmailer'
