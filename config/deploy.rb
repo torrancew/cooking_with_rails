@@ -1,7 +1,8 @@
 require File.expand_path('../environment', __FILE__)
 
 # Load Bundler's Capistrano support
-set :bundle_roles, [ :app ]
+set :bundle_without, [ :development, :test, :assets ]
+set :bundle_roles,   [ :app, :web ]
 require 'bundler/capistrano'
 
 # Application Name
