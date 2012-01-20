@@ -8,8 +8,10 @@
 <% require File.expand_path( '../config/environment', __FILE__ ) %>
 
 common: &common
-  <% Settings.database_config.keys.each do |k| %>
-  <%= k.to_s %>: <%= Settings.database_config[k.to_s] %>
+  <% Settings.database_config.each do |key, val| %>
+    <% if key and val %>
+      <%= "#{key.to_s}: #{val.to_s}" %>
+    <% end %>
   <% end %>
 
 development:
@@ -19,5 +21,8 @@ test:
   <<: *common
 
 production:
+  <<: *common
+
+heroku:
   <<: *common
 
