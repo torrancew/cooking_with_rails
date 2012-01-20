@@ -66,8 +66,8 @@ group :development do
   gem 'foreman', '~> 0.33.0', :require => false
 
   # Deploy to Heroku
-  gem 'heroku', '~> 2.18.1'
-  gem 'kumade', '~> 0.8.2'
+  gem 'heroku', '~> 2.18.1', :require => false
+  gem 'kumade', '~> 0.8.2',  :require => false
 
   # Use Guard to automate testing and whatnot during development
   gem 'guard',          :require => false
