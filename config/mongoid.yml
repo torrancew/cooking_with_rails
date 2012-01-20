@@ -1,0 +1,23 @@
+# MongoID Database Config
+# This file has been hacked to read all settings from the
+# database_config sub-hash in config/application.yml.
+#
+# Unless you are absolutely sure of yourself, you should not
+# edit this file.
+
+<% require File.expand_path( '../config/environment', __FILE__ ) %>
+
+common: &common
+  <% Settings.database_config.keys.each do |k| %>
+  <%= k.to_s %>: <%= Settings.database_config[k.to_s] %>
+  <% end %>
+
+development:
+  <<: *common
+
+test:
+  <<: *common
+
+production:
+  <<: *common
+
