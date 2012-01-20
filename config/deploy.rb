@@ -22,7 +22,7 @@ set :deploy_via,            :remote_cache
 set :git_enable_submodules, 1
 
 # Servers
-server Settings.deploy_config['server'], :app
+server Settings.deploy_config['server'], :app, :web
 
 # Hooks
 after 'deploy:update', 'deploy:cleanup'

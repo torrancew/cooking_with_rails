@@ -2,6 +2,7 @@
 load 'deploy' if respond_to?( :namespace )
 
 # Load default tasks
+load 'config/cap_colors'
 load 'config/deploy'
 
 # Use the Rails asset pipeline
