@@ -7,8 +7,8 @@ rails_env = ENV['RAILS_ENV'] || 'development'
 
 worker_processes = rails_env == 'production' ? 3 : 1
 
-## Load the app before spawning workers
-preload_app true
+## Load the app before spawning workers if not in development
+preload_app = rails_env == 'development' ? false : true
 
 # How long to wait before killing an unresponsive worker
 timeout 30
