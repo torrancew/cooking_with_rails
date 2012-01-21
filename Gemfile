@@ -12,6 +12,9 @@ gem 'bson_ext', '~> 1.5.2', :require => 'bson'
 # Send mails
 gem 'actionmailer'
 
+# Use Grit for git interactions
+gem 'grit', '~> 2.4.1', :require => false
+
 # Use BCrypt & Settingslogic
 gem 'bcrypt-ruby',   '~> 3.0.0', :require => 'bcrypt'
 gem 'settingslogic', '~> 2.0.8'
