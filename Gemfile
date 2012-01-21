@@ -13,7 +13,7 @@ gem 'bson_ext', '~> 1.5.2', :require => 'bson'
 gem 'actionmailer'
 
 # Use BCrypt & Settingslogic
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby',   '~> 3.0.0', :require => 'bcrypt'
 gem 'settingslogic', '~> 2.0.8'
 
 # Support JSON & XML
@@ -27,7 +27,7 @@ gem 'acts_as_api', '~> 0.3.11'
 gem 'haml-rails',   '~> 0.3.4'
 gem 'jquery-rails', '~> 1.0.19'
 
-# Client-side validations
+# Client-side (javascript) validations
 gem 'client_side_validations', '~> 3.1.4'
 
 # Use unicorn as the web server
