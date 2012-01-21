@@ -1,0 +1,8 @@
+screen -t misc    $SHELL
+screen -t git     git-sh
+screen -t console rails console
+screen -t guard   guard
+screen -t foreman foreman start
+
+
+caption always "%{= k-}%{= g} %= %-Lw%?%{r}(%{W}%n*%f %t %{r})%{g}%?%+Lw%?%?%= %{g}"
