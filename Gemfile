@@ -31,7 +31,8 @@ gem 'haml-rails',   '~> 0.3.4'
 gem 'jquery-rails', '~> 1.0.19'
 
 # Client-side (javascript) validations
-gem 'client_side_validations', '~> 3.1.4'
+gem 'client_side_validations',         '~> 3.2.0.beta.2'
+gem 'client_side_validations-mongoid', '~> 2.4.0.beta.2'
 
 # Use unicorn as the web server
 gem 'unicorn', '~> 4.1.1', :require => false
@@ -48,14 +49,17 @@ gem 'newrelic_rpm', :group => :newrelic
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  # Less CSS Asset gems
+  gem 'less-rails',           '~> 2.1.2'
+  gem 'less-rails-bootstrap', '~> 1.4.3' 
+
   # Core Asset gems
-  gem 'less-rails',     '~> 2.1.2'
   gem 'coffee-rails',   '~> 3.1.1'
   gem 'yui-compressor', '~> 0.9.6'
 end
 
 group :test do
-  # Use Spork for clean tests
+  # Use Spork for an RDB instance
   gem 'spork', '~> 0.9.0.rc', :require => false
 
   # Use RSpec & Cucumber
@@ -76,7 +80,6 @@ group :development do
 
   # Deploy to Heroku
   gem 'heroku', '~> 2.18.1', :require => false
-  gem 'kumade', '~> 0.8.2',  :require => false
 
   # Use Guard to automate testing and whatnot during development
   gem 'guard',          :require => false
