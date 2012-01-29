@@ -3,19 +3,26 @@
 
 # Default namespace; all others will inherit from this one
 defaults: &defaults
+  # General settings
+  general:
+    # Point to either a bundle or a path containing CA certs
+    ca_certs: '/etc/ssl/certs'
+
   # Database settings
   database_config:
     # You may use any mongoid.yml-compatible settings here; we just chose URI
+    # Mongo URI - come from environment (preferred)
+    #             or from config file   (fallback)
     uri: <%= ENV['MONGOLAB_URI'] || "mongodb://localhost/mongo_stalker_#{Rails.env}" %>
 
   # Mailer settings
   mailer_config:
-    host: localhost
+    host: 'localhost'
     port: 25
     tls:  false
     # SMTP Auth Settings
-    auth:   none
-    domain: example.com
+    auth:   'none'
+    domain: 'example.com'
 
   # Capistrano settings
   deploy_config:
@@ -23,11 +30,30 @@ defaults: &defaults
     server:        'foo.example.com'
     repository:    'git://github.com/torrancew/mongo_stalker.git'
     deploy_to:     '/usr/local/share/deploy/mongo_stalker'
-    deploy_branch: master
+    deploy_branch: 'master'
     keep_releases: 3
     # Deploy user settings
-    user:     deploy
+    user:     'deploy'
     use_sudo: false
+    # Use Airbrake's Capistrano integration
+    notify_airbrake: false
+
+  # External Service Connection settings (optional)
+  external_services:
+    # Optional Airbrake support
+    airbrake_config:
+      api_key: <%= ENV['AIRBRAKE_API_KEY'] || nil %>
+    # Optional New Relic support
+    new_relic_config:
+      license_key: <%= ENV['NEW_RELIC_LICENSE_KEY'] || nil %>
+      app_name:    <%= ENV['NEW_RELIC_APP_NAME']    || 'MongoStalker' %>
+
+##############################
+### Environmental Settings ###
+##############################
+# Each of the below environments will inherit
+# from the defaults template we defined above,
+# but can override any settings it needs.
 
 development:
   <<: *defaults
@@ -40,4 +66,6 @@ production:
 
 heroku:
   <<: *defaults
+  general:
+    ca_certs: '/usr/lib/ssl/certs/ca-certificates.crt'
 
