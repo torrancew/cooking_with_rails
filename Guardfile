@@ -4,6 +4,8 @@ end
 
 guard :spork, :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS_ENV' => 'test' } do
   watch(%r{^Gemfile(\.lock)?$})
+
+  watch(%r{^app/(controllers|helpers|mailers|models)/})
   watch(%r{^config/(application|environment)\.rb$})
   watch(%r{^config/(environments|initializers)/.+\.rb$})
 
@@ -14,13 +16,13 @@ end
 
 guard :rspec, :cli => '--drb', :version => 2 do
   watch(%r{^spec/.+_spec\.rb$})
-  watch(%r{^lib/(.+)\.rb$})    { |m| "spec/lib/#{m[1]}_spec.rb" }
+  watch(%r{^lib/(.+)\.rb$})         { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch(%r{^spec/spec_helper\.rb$}) { 'spec' }
 
   # Rails example
-  watch(%r{^app/(.+)\.rb$})                              { |m| "spec/#{m[1]}_spec.rb" }
-  watch(%r{^app/(.*)(\.erb|\.haml)$})                    { |m| "spec/#{m[1]}#{m[2]}_spec.rb" }
-  watch(%r{^spec/support/(.+)\.rb$})                     { 'spec' }
+  watch(%r{^app/(.+)\.rb$})                               { |m| "spec/#{m[1]}_spec.rb" }
+  watch(%r{^app/(.*)(\.erb|\.haml)$})                     { |m| "spec/#{m[1]}#{m[2]}_spec.rb" }
+  watch(%r{^spec/support/(.+)\.rb$})                      { 'spec' }
   watch(%r{^config/routes\.rb$})                          { 'spec/routing' }
   watch(%r{^app/controllers/application_controller\.rb$}) { 'spec/controllers' }
 
