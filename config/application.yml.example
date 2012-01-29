@@ -13,7 +13,7 @@ defaults: &defaults
     # You may use any mongoid.yml-compatible settings here; we just chose URI
     # Mongo URI - come from environment (preferred)
     #             or from config file   (fallback)
-    uri: <%= ENV['MONGOLAB_URI'] || "mongodb://localhost/mongo_stalker_#{Rails.env}" %>
+    uri: <%= ENV['MONGOLAB_URI'] || "mongodb://localhost/cooking_with_rails_#{Rails.env}" %>
 
   # Mailer settings
   mailer_config:
@@ -28,8 +28,8 @@ defaults: &defaults
   deploy_config:
     # General deploy settings
     server:        'foo.example.com'
-    repository:    'git://github.com/torrancew/mongo_stalker.git'
-    deploy_to:     '/usr/local/share/deploy/mongo_stalker'
+    repository:    'git://github.com/torrancew/cooking_with_rails.git'
+    deploy_to:     '/usr/local/share/deploy/cooking_with_rails'
     deploy_branch: 'master'
     keep_releases: 3
     # Deploy user settings
@@ -46,7 +46,7 @@ defaults: &defaults
     # Optional New Relic support
     new_relic_config:
       license_key: <%= ENV['NEW_RELIC_LICENSE_KEY'] || nil %>
-      app_name:    <%= ENV['NEW_RELIC_APP_NAME']    || 'MongoStalker' %>
+      app_name:    <%= ENV['NEW_RELIC_APP_NAME']    || 'CookingWithRails' %>
 
 ##############################
 ### Environmental Settings ###

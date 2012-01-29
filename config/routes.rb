@@ -1,4 +1,4 @@
-MongoStalker::Application.routes.draw do
+CookingWithRails::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -6,7 +6,7 @@ set :bundle_roles,   [ :app, :web ]
 require 'bundler/capistrano'
 
 # Application Name
-set :application, 'MongoStalker'
+set :application, 'CookingWithRails'
 
 # General Deploy Info
 set :repository,    Settings.deploy_config[:repository]
