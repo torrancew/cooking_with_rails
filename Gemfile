@@ -39,6 +39,12 @@ gem 'unicorn', '~> 4.1.1', :require => false
 # Use Pry as the Rails Console
 gem 'pry-rails', '~> 0.1.1'
 
+# Airbrake error reporting (optional bundler group)
+gem 'airbrake', :group => :airbrake
+
+# NewRelic monitoring (optional bundler group)
+gem 'newrelic_rpm', :group => :newrelic
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

@@ -1,0 +1,38 @@
+common: &common
+  monitor_mode:   true
+  ssl:            true
+  developer_mode: false
+  agent_enabled:  auto
+  log_level:      info
+  capture_params: false
+  license_key:    <%= Settings.external_services.new_relic_config[:license_key] %>
+  app_name:       <%= Settings.external_services.new_relic_config[:app_name] %>
+  # Page load threshold
+  appdex_t:       0.5
+  # Error collector settings
+  error_collector:
+    capture_source: true
+    enabled:        true
+    ignore_errors:  ActionController::RoutingError
+  # Transaction tracer settings
+  transaction_tracer:
+    record_sql:            obfuscated
+    enabled:               true
+    stack_trace_threshold: 0.5
+    transaction_threshold: apdex_f
+
+development:
+  <<: *common
+  monitor_mode:   false
+  developer_mode: true
+
+test:
+  <<: *common
+  monitor_mode: false
+
+production:
+  <<: *common
+
+heroku:
+  <<: *common
+
