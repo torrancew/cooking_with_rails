@@ -4,7 +4,7 @@ class Settings < Settingslogic
       application_config = ::File.join( ::Rails.root, 'config', 'application.yml' )
       if ::File.exist?( application_config )
         application_config
-      elsif ::Rails.env == 'test' || ENV['HEROKU'] == 'true'
+      elsif ::Rails.env == 'test' || ::Rails.env == 'heroku'
         "#{application_config}.example"
       else
         raise "Error: Could not find a working configuration for environment: #{::Rails.env}"
