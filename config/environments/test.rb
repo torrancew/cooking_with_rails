@@ -35,7 +35,7 @@ MongoStalker::Application.configure do
     :port    => Settings.mailer_config[:port],
     :domain  => Settings.mailer_config[:domain],
 
-    :enable_starttls_auto => Settings.mailer_config['tls'],
+    :enable_starttls_auto => Settings.mailer_config[:tls],
 
     :authentication => Settings.mailer_config[:auth],
     :user_name      => Settings.mailer_config[:user] ? Settings.mailer_config[:user] : nil,
