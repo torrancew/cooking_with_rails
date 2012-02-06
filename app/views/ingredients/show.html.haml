@@ -1,0 +1,18 @@
+%h1 Ingredient Details
+
+%p#notice= notice
+
+.span6
+  %table
+    %tr
+      %th Name:
+      %td= @ingredient.name
+    %tr
+      %th Description:
+      %td= @ingredient.description.present? ? @ingredient.description : 'n/a'
+    %tr
+      %th Vegetarian:
+      %td= @ingredient.vegetarian? ? 'yes' : 'no'
+    %tr
+      %th= link_to 'Edit', edit_ingredient_path(@ingredient)
+      %td= link_to 'Back', ingredients_path

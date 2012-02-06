@@ -1,0 +1,22 @@
+%h1 Ingredient Listing
+
+%table{ :class => 'table-condensed table-striped' }
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Vegetarian
+      %th
+      %th
+
+  - @ingredients.each do |ingredient|
+    %tr
+      %td= link_to ingredient.name, ingredient
+      %td= ingredient.description.empty? ? 'n/a' : ingredient.description
+      %td= ingredient.vegetarian? ? 'yes' : 'no'
+      %td= link_to 'Edit',    edit_ingredient_path(ingredient)
+      %td= link_to 'Destroy', ingredient, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Ingredient', new_ingredient_path
