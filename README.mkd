@@ -6,11 +6,11 @@ Cooking with Rails is a Rails web application for managing recipes and ingredien
 Getting Started
 ---------------
 
-Cooking With Rails is based on relatively young technologies like MongoDB and Beanstalk, and aims to be highly configurable for both controlled and Heroku deploys.
+Cooking With Rails is based on relatively young technologies like MongoDB and Beanstalk, and aims to be highly configurable for both controlled and Heroku deploys (targeted at the Cedar stack).
 
 ### Dependencies
 
-  * Ruby      (we recommend 1.9.3+)
+  * Ruby      (I recommend 1.9.3+ for this app)
   * Bundler   (1.0+)
   * MongoDB   (or available server instance)
   * BeanStalk (or available server instance)
@@ -51,3 +51,54 @@ The following bundle combinations can provide thinner installs. They can be mixe
     <pre>
     bundle install --without development
     </pre>
+
+### Configuring
+
+Copy config/application.yml.example to config/application.yml to get started.
+
+The config uses SettingsLogic, and is an ERB-enabled YAML file. It defaults to environment variables, if they exist, and falls back to string values. All of this logic is in the config file itself. Feel free to drop the ERB logic in ymy own config/application.yml, if you'd prefer.
+
+
+### Running
+
+#### Development
+
+The development environment can be run in several ways:
+
+  * <pre>screen -c ext/ide.screen</pre>
+    This will launch a screen session that attempts to provide IDE functionality.
+    It is a wrapper around the recommended approaches to the tests and app server, as Ill as providing rails, git and bash consoles.
+
+  * <pre>foreman start</pre>
+    This will launch an app server and a worker process. It provides a very similar runtime to Heroku's cedar stack.
+    **This is the recommended way to run the Cooking With Rails application on ymy own**
+    *Note: This is already run when using the screen IDE for development*
+
+#### Testing
+
+The test suite can be run with or without Spork (I recommend using Spork). The optimal way to handle this when not using the screen IDE config is to use Guard:
+
+  * <pre>guard</pre>
+    This will run all specs, and re-run specs as related files are updated.
+    **This is the recommended way to run the Cooking with Rails test suite**
+    *Note: This is already run when using the screen IDE for development*
+
+Otherwise, the suites can be run individually via the standard mechanisms (I use RSpec and Cucumber).
+
+Contributing
+------------
+
+To contribute, please fork the project on github, and submit ymy changes in a pull request.
+**Note: Not all pull requests will be accepted**
+
+Feature Requests
+----------------
+
+Please file all feature requests as Github Issues.
+**Note: Not all feature requests will be accepted/worked on, but I'll try my best**
+
+Bugs/Issues
+-----------
+
+Please file all bugs as Github Issues.
+I will try to respond as quickly as possible for all reported issues.
