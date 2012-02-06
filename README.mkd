@@ -1,0 +1,53 @@
+Cooking With Rails
+==================
+
+Cooking with Rails is a Rails web application for managing recipes and ingredients. It is currently in alpha state, and is only suitable for hacking.
+
+Getting Started
+---------------
+
+Cooking With Rails is based on relatively young technologies like MongoDB and Beanstalk, and aims to be highly configurable for both controlled and Heroku deploys.
+
+### Dependencies
+
+  * Ruby      (we recommend 1.9.3+)
+  * Bundler   (1.0+)
+  * MongoDB   (or available server instance)
+  * BeanStalk (or available server instance)
+
+### Setting Up
+
+After cloning the repository and satisfying the above dependencies, simply running the following will yield a full install ready for development, testing and running Cooking With Rails:
+
+<pre>
+bundle install
+</pre>
+
+#### Bundle Groups
+
+The following bundle combinations can provide thinner installs. They can be mixed and matched as desired by separating multiple groups with commas:
+
+  * airbrake: This group controls airbrake
+    <pre>
+    bundle install --without airbrake
+    </pre>
+
+  * newrelic: This group controls NewRelic
+    <pre>
+    bundle install --without newrelic
+    </pre>
+
+  * assets: All gems involved with asset generation should reside in this group
+    <pre>
+    bundle install --without assets
+    </pre>
+
+  * test: All testing-related gems should reside in this group
+    <pre>
+    bundle install --without test
+    </pre>
+
+  * development: All development-specific gems should reside in this group
+    <pre>
+    bundle install --without development
+    </pre>
