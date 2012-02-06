@@ -56,7 +56,7 @@ The following bundle combinations can provide thinner installs. They can be mixe
 
 Copy config/application.yml.example to config/application.yml to get started.
 
-The config uses SettingsLogic, and is an ERB-enabled YAML file. It defaults to environment variables, if they exist, and falls back to string values. All of this logic is in the config file itself. Feel free to drop the ERB logic in ymy own config/application.yml, if you'd prefer.
+The config uses SettingsLogic, and is an ERB-enabled YAML file. It defaults to environment variables, if they exist, and falls back to string values. All of this logic is in the config file itself. Feel free to drop the ERB logic in your own config/application.yml, if you'd prefer.
 
 
 ### Running
@@ -71,7 +71,7 @@ The development environment can be run in several ways:
 
   * <pre>foreman start</pre>
     This will launch an app server and a worker process. It provides a very similar runtime to Heroku's cedar stack.
-    **This is the recommended way to run the Cooking With Rails application on ymy own**
+    **This is the recommended way to run the Cooking With Rails application on your own**
     *Note: This is already run when using the screen IDE for development*
 
 #### Testing
@@ -88,7 +88,7 @@ Otherwise, the suites can be run individually via the standard mechanisms (I use
 Contributing
 ------------
 
-To contribute, please fork the project on github, and submit ymy changes in a pull request.
+To contribute, please fork the project on github, and submit your changes in a pull request.
 **Note: Not all pull requests will be accepted**
 
 Feature Requests
