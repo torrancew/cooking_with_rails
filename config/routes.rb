@@ -1,6 +1,6 @@
 CookingWithRails::Application.routes.draw do
-  resources :ingredients
-  root :to => 'ingredients#index'
+  resources :ingredients, :recipes
+  root :to => 'recipes#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

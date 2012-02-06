@@ -1,0 +1,22 @@
+%h1 Recipe Details
+
+%p#notice= notice
+
+%p
+  %b Name:
+  = @recipe.name
+%p
+  %b Description:
+  = @recipe.description
+%p
+  %b Ingredients:
+  %ul
+  - @recipe.recipe_ingredients.each do |ingredient|
+    %p.ingredient= "#{pluralize ingredient.quantity, ingredient.unit} #{ingredient.name}"
+%p
+  %b Directions:
+  = @recipe.directions
+
+= link_to 'Edit', edit_recipe_path(@recipe)
+\|
+= link_to 'Back', recipes_path

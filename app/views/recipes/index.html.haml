@@ -1,0 +1,22 @@
+%h1 Recipe Listing
+
+%table{ :class => 'table-condensed table-striped' }
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Directions
+      %th
+      %th
+
+  - @recipes.each do |recipe|
+    %tr
+      %td= link_to recipe.name, recipe
+      %td= recipe.description
+      %td= recipe.directions
+      %td= link_to 'Edit', edit_recipe_path(recipe)
+      %td= link_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Recipe', new_recipe_path
