@@ -26,6 +26,9 @@ gem 'nokogiri', '~> 1.5.0'
 # Act as API
 gem 'acts_as_api', '~> 0.3.11'
 
+# Use SimpleForm for form building
+gem 'simple_form'
+
 # Use HAML & JQuery
 gem 'haml-rails',   '~> 0.3.4'
 gem 'jquery-rails', '~> 1.0.19'
@@ -33,6 +36,7 @@ gem 'jquery-rails', '~> 1.0.19'
 # Client-side (javascript) validations
 gem 'client_side_validations',         '~> 3.2.0.beta.2'
 gem 'client_side_validations-mongoid', '~> 2.4.0.beta.2'
+gem 'client_side_validations-simple_form'
 
 # Use unicorn as the web server
 gem 'unicorn', '~> 4.1.1', :require => false
@@ -50,8 +54,7 @@ gem 'newrelic_rpm', :group => :newrelic
 # in production environments by default.
 group :assets do
   # Less CSS Asset gems
-  gem 'less-rails',           '~> 2.1.2'
-  gem 'less-rails-bootstrap', '~> 1.4.3' 
+  gem 'less-rails-bootstrap', '~> 2.0.4' 
 
   # Core Asset gems
   gem 'coffee-rails',   '~> 3.1.1'
