@@ -1,0 +1,12 @@
+= simple_form_for( @singular_table_name ) do |f|
+  = f.error_notification
+
+  .inputs
+  - attributes.each do |attribute|
+    - if attribute.reference?
+      = f.association attribute.name.to_sym
+    - else
+      = f.input attribute.name.to_sym
+
+  .actions
+    = f.button :submit
