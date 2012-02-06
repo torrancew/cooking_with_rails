@@ -1,0 +1,9 @@
+%div{ :class => 'navbar navbar-fixed-top', 'data-scrollspy' => 'scrollspy' }
+  .navbar-inner
+    .container
+      %a{ :class => 'brand', :href => '#' }Cooking with Rails
+      %ul.nav
+        %li
+          = link_to 'Recipes',     Recipe
+        %li
+          = link_to 'Ingredients', Ingredient

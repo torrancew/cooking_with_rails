@@ -1,3 +1,4 @@
+# This model exposes the application settings
 class Settings < Settingslogic
   private
     def self.get_source
