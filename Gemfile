@@ -45,7 +45,7 @@ gem 'unicorn', '~> 4.1.1', :require => false
 gem 'pry-rails', '~> 0.1.1'
 
 # Airbrake error reporting (optional bundler group)
-gem 'airbrake', :group => :airbrake
+gem 'airbrake', :group => :airbrake, :require => false
 
 # NewRelic monitoring (optional bundler group)
 gem 'newrelic_rpm', :group => :newrelic
